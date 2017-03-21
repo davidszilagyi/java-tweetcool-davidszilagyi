@@ -62,5 +62,6 @@ Also handle all possible exceptions.
 
 If you managed to finish with the application to **match the excepted behaviour**, you can extend it with a javascript code to refresh
 the message wall continously. And store tweets on a csv file. If the server restarts, read the tweets from the file.
+Store "poster" in Cookie, and load the poster name automatically.
 
 If you try to create this extra version, please still keep the "basic" terminal based one you created first!
