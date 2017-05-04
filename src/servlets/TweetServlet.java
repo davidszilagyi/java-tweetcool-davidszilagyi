@@ -1,16 +1,17 @@
 package servlets;
 
+import jdk.nashorn.internal.objects.NativeJSON;
+import jdk.nashorn.internal.runtime.JSONFunctions;
 import main.Tweet;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
+import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
-import java.util.ArrayList;
-import java.util.Date;
-import java.util.List;
+import java.util.*;
 
 /**
  * Created by david_szilagyi on 2017.05.03..
@@ -26,6 +27,7 @@ public class TweetServlet extends HttpServlet {
         if (poster != null && content != null) {
             tweets.add(0, new Tweet(poster, content, new Date()));
         }
+        response.addCookie(new Cookie("username", poster));
         response.sendRedirect("/tweet");
     }
 

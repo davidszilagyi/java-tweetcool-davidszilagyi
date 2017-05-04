@@ -1,5 +1,7 @@
 <%@ page import="main.Tweet" %>
-<%@ page import="java.util.List" %><%--
+<%@ page import="java.util.List" %>
+<%@ page import="java.util.Map" %>
+<%@ page import="java.util.HashMap" %><%--
   Created by IntelliJ IDEA.
   User: david_szilagyi
   Date: 2017.05.03.
@@ -15,7 +17,7 @@
 <div>
     <div>
         <form action="tweet" method="post">
-            Name: <br> <input type="text" name="poster">
+            Name: <br> <input type="text" name="poster" value="${cookie['username'].value}">
             <br> Message: <br> <input type="text" name="content">
             <input type="submit" value="Send">
         </form>
